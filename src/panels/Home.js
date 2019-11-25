@@ -20,7 +20,7 @@ const Home = ({ id, go, fetchedUser, fetchedUserPhone }) => (
 		<Group title="User Data Fetched with VK Connect">
 			<Cell
 				before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-				description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : '' && fetchedUserPhone.data.phone ? fetchedUserPhone.data.phone.phone : '' }
+				description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : '' && fetchedUserPhone.phone ? fetchedUserPhone.phone : '' }
 			>
 				{`${fetchedUser.first_name} ${fetchedUser.last_name} ${fetchedUserPhone.phone}`}
 			</Cell>
