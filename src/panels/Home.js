@@ -20,12 +20,17 @@ const Home = ({ id, go, fetchedUser, fetchedUserPhone }) => (
 		<Group title="User Data Fetched with VK Connect">
 			<Cell
 				before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-				description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : '' && fetchedUserPhone.phone ? fetchedUserPhone.phone : '' }
+				description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''  }
 			>
-				{`${fetchedUser.first_name} ${fetchedUser.last_name} ${fetchedUserPhone.phone}`}
+				{`${fetchedUser.first_name} ${fetchedUser.last_name} `}
 			</Cell>
 		</Group>}
-
+		{fetchedUserPhone &&
+		<Group title="User Data Fetched with VK Connect">
+			<Div>
+			{`${fetchedUserPhone.phone}`}
+			</Div>
+		</Group>}
 		<Group title="Навигашка">
 			<Div>
 				<Button size="xl" level="2" onClick={go} data-to="persik">

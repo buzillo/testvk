@@ -38,6 +38,15 @@ const App = () => {
 		}
 
 		fetchData();
+
+			async function fetchDataTwo() {
+
+			const userphone = await connect.send("VKWebAppGetPersonalCard", {"type": ["phone"]});
+			setUserPhone(userphone);
+			setPopout(null);
+		}
+
+		fetchDataTwo();
 	}, []);
 
 	const go = e => {
