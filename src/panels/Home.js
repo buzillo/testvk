@@ -25,12 +25,7 @@ const Home = ({ id, go, fetchedUser, fetchedUserPhone }) => (
 				{`${fetchedUser.first_name} ${fetchedUser.last_name} `}
 			</Cell>
 		</Group>}
-		{fetchedUserPhone &&
-		<Group title="User Data Fetched with VK Connect">
-			<Div>
-			{`${fetchedUserPhone.phone}`}
-			</Div>
-		</Group>}
+
 		<Group title="Навигашка">
 			<Div>
 				<Button size="xl" level="2" onClick={go} data-to="persik">
@@ -66,10 +61,8 @@ Home.propTypes = {
 		city: PropTypes.shape({
 			title: PropTypes.string,
 		}),
-	fetchedUserPhone: PropTypes.shape({
-	phone: PropTypes.string,
 
-	}),
+
 	}),
 };
 

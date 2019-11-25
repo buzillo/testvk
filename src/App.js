@@ -32,9 +32,7 @@ const App = () => {
 			const user = await connect.sendPromise('VKWebAppGetUserInfo');
 			setUser(user);
 			setPopout(null);
-			const userphone = await connect.send("VKWebAppGetPersonalCard", {"type": ["phone"]});
-			setUserPhone(userphone);
-			setPopout(null);
+			
 		}
 
 		fetchData();
