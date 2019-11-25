@@ -13,7 +13,7 @@ import Input from "@vkontakte/vkui/dist/components/Input/Input";
 import Checkbox from "@vkontakte/vkui/dist/components/Checkbox/Checkbox";
 
 
-const Home = ({ id, go, fetchedUser }) => (
+const Home = ({ id, go, fetchedUser, fetchedUserPhone }) => (
 	<Panel id={id}>
 		<PanelHeader>Панель</PanelHeader>
 		{fetchedUser &&
@@ -22,7 +22,7 @@ const Home = ({ id, go, fetchedUser }) => (
 				before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
 				description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
 			>
-				{`${fetchedUser.first_name} ${fetchedUser.last_name} ${fetchedUserPhone.data}`}
+				{`${fetchedUser.first_name} ${fetchedUser.last_name} ${fetchedUserPhone.phone}`}
 			</Cell>
 		</Group>}
 
@@ -61,6 +61,10 @@ Home.propTypes = {
 		city: PropTypes.shape({
 			title: PropTypes.string,
 		}),
+	fetchedUserPhone: PropTypes.shape({
+	phone: PropTypes.string,
+
+	}),
 	}),
 };
 

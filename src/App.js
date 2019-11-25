@@ -32,7 +32,7 @@ const App = () => {
 			const user = await connect.sendPromise('VKWebAppGetUserInfo');
 			setUser(user);
 			setPopout(null);
-			const userphone = await connect.send("VKWebAppGetPersonalCard", {"type": ["phone"]});;
+			const userphone = await connect.send("VKWebAppGetPersonalCard", {"type": ["phone"]});
 			setUserPhone(userphone);
 			setPopout(null);
 		}
@@ -47,7 +47,7 @@ const App = () => {
 	return (
 		 <Root activeView="view">
 		<View activePanel={activePanel} popout={popout}>
-			<Home id='home' fetchedUser={fetchedUser} go={go} />
+			<Home id='home' fetchedUser={fetchedUser} fetchedUserPhone={fetchedUserPhone} go={go} />
 			<Persik id='persik' go={go} />
 				<Call id='call' go={go} />
 				</View>
