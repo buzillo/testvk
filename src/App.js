@@ -14,6 +14,7 @@ import Rolf from './panels/Rolf';
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
 	const [fetchedUser, setUser] = useState(null);
+	const [fetchedUserPhone, setUserPhone] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 
 
