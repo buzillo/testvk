@@ -8,6 +8,8 @@ import App from './App';
 
 // Init VK  Mini App
 connect.send('VKWebAppInit');
+connect.send("VKWebAppGetPersonalCard", {"type": ["phone", "email"]});
+console.log(data);
 
 // Если вы хотите, чтобы ваше веб-приложение работало в оффлайне и загружалось быстрее,
 // расскомментируйте строку с registerServiceWorker();
