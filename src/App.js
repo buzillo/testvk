@@ -13,9 +13,11 @@ import Rolf from './panels/Rolf';
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
-
 	const [fetchedUser, setUser] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
+
+
+
 
 	useEffect(() => {
 		connect.subscribe(({ detail: { type, data }}) => {
@@ -29,7 +31,11 @@ const App = () => {
 			const user = await connect.sendPromise('VKWebAppGetUserInfo');
 			setUser(user);
 			setPopout(null);
+			const userphone = await connect.send("VKWebAppGetPersonalCard", {"type": ["phone"]});;
+			setUserPhone(userphone);
+			setPopout(null);
 		}
+
 		fetchData();
 	}, []);
 
